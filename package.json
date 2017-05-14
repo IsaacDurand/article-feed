@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build; node server/index.js",
+    "build": "webpack -p",
     "test": "echo 'No tests written yet' && exit 1"
   },
   "repository": {
@@ -28,8 +30,7 @@
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
     "redux": "^3.6.0",
-    "webpack": "^2.5.1",
-    "webpack-livereload-plugin": "^0.11.0"
+    "webpack": "^2.5.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
