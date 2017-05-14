@@ -7,3 +7,7 @@ function reducer(state = initial, action) {
 }
 
 export default reducer;
+
+export const getAllData = () => dispatch => {
+  return [];
+}
