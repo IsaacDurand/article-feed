@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build; node server/index.js",
+    "start-dev": "nodemon server/index.js",
     "build": "webpack -p",
+    "build-dev": "webpack -w",
     "test": "echo 'No tests written yet' && exit 1"
   },
   "repository": {
