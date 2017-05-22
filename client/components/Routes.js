@@ -1,11 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import {connect} from 'react-redux';
 import ArticleList from './ArticleList';
-import TopicList from './TopicList';
-import {getAllData} from '../redux/reducer'
+import TopicListContainer from '../containers/TopicListContainer';
 
-const Routes = ({getAllData}) => {
+const Routes = () => {
   return (
     <Router>
       <div>
@@ -18,14 +16,10 @@ const Routes = ({getAllData}) => {
           </li>
         </ul>
         <Route exact path="/" component={ArticleList} />
-        <Route path="/topics" component={TopicList} />
+        <Route path="/topics" component={TopicListContainer} />
       </div>
     </Router>
   )
 };
 
-// TODO: revisit
-const mapState = ({data}) => ({data});
-const mapDispatch = {getAllData};
-
-export default connect(mapState, mapDispatch)(Routes);
+export default Routes;

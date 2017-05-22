@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './components/Routes'
+import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import store from './redux/store';
+import {createStore} from 'redux';
+import articleApp from './reducers';
+import Routes from './components/Routes'
 
+let store = createStore(articleApp);
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <Routes />
   </Provider>,

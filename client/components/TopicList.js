@@ -1,17 +1,21 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
+import Topic from './Topic';
 
-class TopicList extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
+const TopicList = ({ topics, onTopicClick }) => {
+  return (
+    <div>
       <h1>Topic List</h1>
-    )
-  }
-}
+      <ul>
+        {topics.map(topic =>
+          <Topic
+            key={topic.id}
+            topic={topic}
+            onClick={() => onTopicClick(topic.id)}
+          />
+        )}
+      </ul>
+    </div>
+  )
+};
 
-// TODO: revisit this function
-const mapState = ({data}) => ({data});
-export default connect(mapState)(TopicList);
+export default TopicList;
